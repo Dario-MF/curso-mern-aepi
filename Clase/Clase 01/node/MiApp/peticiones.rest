@@ -1,0 +1,8 @@
+POST http://localhost:3000/products/create
+Content-Type: application/json
+
+{
+    "nombre": "microondas",
+    "precio": 129,
+    "departamento": "cocina"
+}
