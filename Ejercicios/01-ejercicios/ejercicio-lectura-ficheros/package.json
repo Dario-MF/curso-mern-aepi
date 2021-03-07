@@ -1,0 +1,9 @@
+{
+  "name": "ej-lectura-ficheros-md",
+  "version": "0.0.1",
+  "description": "ejercicio con node y 'fs'.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Dario MF",
+  "license": "MIT"
+}
