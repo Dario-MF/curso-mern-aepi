@@ -1,0 +1,53 @@
+extends ../layout
+
+mixin lista(arr)
+    ul 
+        each item in arr 
+            li= item
+        else 
+            li No hay datos
+
+
+block content    
+   
+    div
+        p= mensaje
+        a(href='http://google.com', target='_blank', class='enlace') Google.com | 
+        a#enlacePpal.enlace.rojo(href='#')  Otro enlace 
+    .segundo 
+        //Comentario se visualiza en HTML 
+        //- Comentario solo para PUG.
+        case numProductos 
+            when 0
+                p No tienes productos. 
+            when 1
+                p Tienes un producto. 
+            default 
+                p Tienes #{numProductos} productos.
+    .tercero 
+        //- Codigo javascript bucle.
+        ul 
+            - for(let i = 0; i < nombres.length; i++) //- se usa '-' para declarar codigo js
+                li= nombres[i]
+    .cuarto 
+        //- Condicionales
+        if activo
+            p Está activo 
+        else
+            p No está activo
+    .quinto 
+        //- Iterador forEach
+        ol 
+            each nombre in nombres 
+                li= nombre 
+            else 
+                li No hay nombres
+    .sexto 
+        +lista(nombres)
+        +lista([])
+        +lista([1,2,3,4])
+
+block footer 
+    footer 
+        hr
+        p Footer de la página
