@@ -1,12 +1,24 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    res.send('Petición GET /products');
+    res.render('products/list',{
+        title: 'Mi server',
+        mensaje:'Products',
+        numProductos: 5,
+        nombres: ['Mario', 'Dario', 'Pedro', 'Marcos'],
+        activo: true
+    });
 });
 
 router.get('/edit', (req, res) => {
     console.log('FECHA: ', req.fechaActual);
-    res.send('Petición GET /productos/edit');
+    res.render('products/edit',{
+        title: 'Mi server',
+        mensaje:'Products | Edit',
+        numProductos: 5,
+        nombres: ['Mario', 'Dario', 'Pedro', 'Marcos'],
+        activo: true
+    });
 });
 
 // localhost:3000/products/filtro?departamento=hogar&pagina=2
@@ -27,3 +39,7 @@ router.post('/create', (req, res) => {
 });
 
 module.exports = router;
+
+export MONGO_PATH="/usr/local/mongodb"
+
+export PATH="$PATH:$MONGO_PATH/bin"
