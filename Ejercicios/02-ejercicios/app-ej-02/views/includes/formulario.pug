@@ -1,4 +1,5 @@
 
+// Formulario
 form.row.g-3.formClient(action= formPath, method='POST')
     .col-md-6
         label.form-label(for='inputName') Nombre
@@ -23,7 +24,7 @@ form.row.g-3.formClient(action= formPath, method='POST')
     .col-12.mt-4
         button.btn.btn-block.btn-primary(type='submit') #{formBtn}
 
-
+//- Scripts para activar checkbox dinamico
 script. 
     const news= #{newsletter};
     const conditions= #{condiciones};

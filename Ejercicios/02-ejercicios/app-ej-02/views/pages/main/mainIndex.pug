@@ -1,9 +1,9 @@
 extends ../../config/template
 append config
   -pageTitle = title
-  -descripcion = 'Pagina principal de la web'
+  -descripcion = 'Página principal de la web'
   -headerImgPath = '/img/pcBanner3.jpg'
   
 block main
-  include ../../includes/navBar
-  include ../../includes/header
+  .container-main
+    include:markdown-it ../../../README.md

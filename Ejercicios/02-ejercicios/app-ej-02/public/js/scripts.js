@@ -1,5 +1,5 @@
 
-
+// script active navbar
 const activeMenu = () => {
     const menu = document.getElementById('navbarNav');
     if (menu) {

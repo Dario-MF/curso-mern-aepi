@@ -1,9 +1,10 @@
 extends ../config/template
 append config
-  -pageTitle = title
+  -pageTitle = 'Error'
+  -descripcion= 'Página no encontrada'
+  -headerImgPath = '/img/err404.jpg'
   
 block main
-  include ../includes/navBar
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .container-error
+    h1= message
+    h2= error.status

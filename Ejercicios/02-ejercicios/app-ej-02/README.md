@@ -1,4 +1,4 @@
-# Ejercicios SEMANA 2
+# Ejercicio SEMANA 2
 
 La tarea de esta semana consiste en desarrollar una aplicación con Express que cumpla con las siguientes
 normas:
