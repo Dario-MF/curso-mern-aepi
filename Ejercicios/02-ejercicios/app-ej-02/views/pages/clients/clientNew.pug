@@ -1,0 +1,11 @@
+extends ../../config/template
+append config
+  -pageTitle = 'Formulario'
+  -descripcion = 'Añada a nuevos clientes a la base de datos'
+  -headerImgPath = '/img/pcBanner5.jpg'
+  -formPath = '/client/create'
+  
+block main
+  include ../../includes/navBar
+  include ../../includes/header
+  include ../../includes/formulario  

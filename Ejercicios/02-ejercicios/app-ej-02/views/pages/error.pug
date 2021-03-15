@@ -1,0 +1,9 @@
+extends ../config/template
+append config
+  -pageTitle = title
+  
+block main
+  include ../includes/navBar
+  h1= message
+  h2= error.status
+  pre #{error.stack}
