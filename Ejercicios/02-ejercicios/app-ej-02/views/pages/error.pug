@@ -1,10 +1,10 @@
 extends ../config/template
 append config
-  -pageTitle = 'Error'
-  -descripcion= 'Página no encontrada'
+  -pageTitle = title
+  -descripcion= desc
   -headerImgPath = '/img/err404.jpg'
   
 block main
   .container-error
-    h1= message
-    h2= error.status
+    h1= title
+    h2= msg

@@ -1,18 +1,17 @@
-const express = require('express');
-const router = express.Router();
+const { Router } = require('express');
+const { renderMainIndex, renderMainAbout } = require('../controllers/mainControllers');
 
-// Get /main/index
-router.get('/', (req, res) => {
-  res.redirect('/main/index')
-});
+const router = Router();
 
-router.get('/main/index', (req, res)=> {
-  res.render('pages/main/mainIndex', { title: 'Main' });
-});
 
-// Get /main/about
-router.get('/main/about', (req, res) => {
-  res.render('pages/main/mainAbout', { title: 'About' });
-});
+
+// route main/index GET:
+router.get('/index', renderMainIndex);
+
+// route main/about GET:
+router.get('/about', renderMainAbout);
+
+
+
 
 module.exports = router;
