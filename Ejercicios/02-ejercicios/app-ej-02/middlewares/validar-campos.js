@@ -9,7 +9,7 @@ const validarCampos = (req, res, next) => {
         };
         next();
     } catch (error) {
-        const err = error.mapped()
+        const err = error.mapped();
         res.locals.message = 'Error en la petición: ' + Object.keys(err);
         res.locals.error = JSON.stringify(err);
         res.locals.status = 400;

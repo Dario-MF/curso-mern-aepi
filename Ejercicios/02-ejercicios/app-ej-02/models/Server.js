@@ -3,6 +3,7 @@ const path = require('path');
 require('dotenv').config();
 require('colors');
 const { dbConnection } = require('../database/config.db');
+const { closeServer } = require('../middlewares/closeServer');
 const { routeError, handleError } = require('../middlewares/gestionErrores');
 
 
@@ -18,24 +19,33 @@ class Server {
 
         // Conectar DB
         this.conectarDB();
-        // Middlewares.
+        // Settings.
         this.settings();
+        // Middlewares.
+        this.middlewares()
         // Routes
         this.routes();
     }
+
     async conectarDB() {
         await dbConnection()
     }
 
     settings() {
-        // lectura y parsing de body
-        this.app.use(express.json());
-        this.app.use(express.urlencoded({ extended: false }));
         // view engine setup
         this.app.set('views', path.join(__dirname, '../views'));
         this.app.set('view engine', 'pug');
+    }
+
+    middlewares() {
+        // lectura y parsing de body
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: false }));
         // Directorio publico
         this.app.use(express.static(path.join(__dirname, '../public')));
+
+        //close server.
+        this.app.use(closeServer);
     }
 
     routes() {
