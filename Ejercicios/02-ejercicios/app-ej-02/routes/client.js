@@ -3,6 +3,7 @@ const { check } = require('express-validator');
 const { existeClienteId, esEmailUnique } = require('../helpers/validation-db');
 const { cambiosForm } = require('../middlewares/cambiosFormulario');
 const { validarCampos } = require('../middlewares/validar-campos');
+const { serverErrors } = require('../middlewares/gestionErrores');
 const {
     findAllClients,
     renderNewClient,
@@ -12,7 +13,11 @@ const {
     updateClient
 } = require('../controllers/clientController');
 
+
+
 const router = Router();
+
+
 
 // route /client/index GET:
 router.get('/index', findAllClients);
@@ -57,6 +62,9 @@ router.post('/update/:id', [
     cambiosForm,
     validarCampos
 ], updateClient);
+
+
+router.use(serverErrors);
 
 
 

@@ -2,15 +2,20 @@ const { validationResult } = require('express-validator');
 
 
 const validarCampos = (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        console.log(errors)
-        res.render('pages/error', {
-            title: 'Error',
-            desc: 'Error en los datos',
-        });
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            validationResult(req).throw();
+        };
+        next();
+    } catch (error) {
+        const err = error.mapped()
+        res.locals.message = 'Error en la petición: ' + Object.keys(err);
+        res.locals.error = JSON.stringify(err);
+        res.locals.status = 400;
+
+        res.status(400).render('pages/error');
     };
-    next();
 };
 
 

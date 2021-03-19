@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
-const { dbConnection } = require('../database/config.db');
-const { errorCrear } = require('../controllers/errorController');
 require('dotenv').config();
 require('colors');
+const { dbConnection } = require('../database/config.db');
+const { routeError, handleError } = require('../middlewares/gestionErrores');
+
+
 
 
 class Server {
@@ -18,7 +19,7 @@ class Server {
         // Conectar DB
         this.conectarDB();
         // Middlewares.
-        this.middlewares();
+        this.settings();
         // Routes
         this.routes();
     }
@@ -26,9 +27,7 @@ class Server {
         await dbConnection()
     }
 
-    middlewares() {
-        // cors
-        this.app.use(cors());
+    settings() {
         // lectura y parsing de body
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }));
@@ -45,12 +44,13 @@ class Server {
         this.app.use(this.clientPath, require('../routes/client'));
 
         // Gestión de errores de ruta
-        this.app.use(this.errorPath, errorCrear);
+        this.app.use(this.errorPath, routeError);
+        this.app.use(handleError);
     }
 
     listen() {
         this.app.listen(this.port, () => {
-            console.log(`Servidor activo en puerto: ${this.port}`.green, `\nPath: http://localhost:${this.port}`);
+            console.log(`Servidor activo en puerto: ${this.port}`.green, `\nPath: http://localhost:${this.port}/main/index`);
         });
     }
 };

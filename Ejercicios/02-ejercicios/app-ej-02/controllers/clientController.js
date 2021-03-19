@@ -1,13 +1,14 @@
 const Cliente = require('../models/Cliente');
 
 
-const findAllClients = async (req, res) => {
+const findAllClients = async (req, res, next) => {
     try {
         const clientes = await Cliente.find({ state: true });
         res.render('pages/clients/clientIndex', { title: 'Clientes', clientes });
 
     } catch (error) {
         console.log(error);
+        next(error);
     };
 };
 
@@ -15,7 +16,7 @@ const renderNewClient = (req, res) => {
     res.render('pages/clients/clientNew', { title: 'Nuevo Cliente' });
 };
 
-const findClientById = async (req, res) => {
+const findClientById = async (req, res, next) => {
     try {
         const { id } = req.params;
         const cliente = await Cliente.findById(id);
@@ -23,10 +24,11 @@ const findClientById = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+        next(error);
     };
 };
 
-const deleteClientById = async (req, res) => {
+const deleteClientById = async (req, res, next) => {
     // Por buenas practicas en db, no se elimina la informacion solo se inhabilita para la app.
     try {
         const { id } = req.params;
@@ -34,11 +36,12 @@ const deleteClientById = async (req, res) => {
         res.redirect('/client/index');
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        next(error);
     };
 };
 
-const createNewClient = async (req, res) => {
+const createNewClient = async (req, res, next) => {
     try {
         // Se extrae del body solo los campos que interesan, evitamos mandar nada de mas.
         const {
@@ -60,10 +63,11 @@ const createNewClient = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+        next(error);
     };
 };
 
-const updateClient = async (req, res) => {
+const updateClient = async (req, res, next) => {
     try {
         const { id } = req.params;
         // Sacamos posible conflicto de parametro _id en DB.
@@ -87,6 +91,7 @@ const updateClient = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+        next(error);
     };
 };
 
