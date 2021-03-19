@@ -6,6 +6,7 @@ npm install
 npm run startdev
 
 ```
+- Para modificar horario apertura server: modificar variable de entorno.
 - DB local en DMF_ejercicio.
 - Se siguio estructura para MVC.
 - Express-validator para checkear la información del formulario.
