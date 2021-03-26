@@ -9,6 +9,8 @@ const usersRouter = require('./routes/users');
 const clientesRouter = require('./routes/clientes');
 const testRouter = require('./routes/test');
 
+const apiRouter = require('./routes/api/api.router');
+
 
 
 require('./dbConfig');
@@ -28,14 +30,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-/**
- * Routes
- */
+// Routes app
+ 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/clientes', clientesRouter);
 app.use('/test', testRouter);
-
+// Routes api
+app.use('/api', apiRouter );
  
 
 

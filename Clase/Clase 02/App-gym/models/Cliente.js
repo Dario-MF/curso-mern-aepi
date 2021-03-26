@@ -4,11 +4,40 @@ const Schema = mongoose.Schema;
 
 
 const clienteSchema = new Schema({
-    nombre: String,
-    apellidos: String,
-    email: String,
-    cuota: Number,
-    activo: Boolean
+    nombre: {
+        type: String, 
+        trim: true,
+        minlength:[4, 'minimo 4 caracteres'], 
+        maxlength:[15, 'maximo 15 caracteres'],
+        required: [true, 'El campo nombre es requerido'],
+    },
+    apellidos:{
+        type: String, 
+        trim: true,
+        minlength:[4, 'minimo 4 caracteres'], 
+        maxlength:[20, 'maximo 15 caracteres'],
+        required: [true, 'El campo apellidos es requerido'],
+    },
+    email: {
+        type: String,
+        trim: true,
+        lowercase: true,
+        required: [true, 'El campo email es requerido'],
+        validate: [function(email) {
+            var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return re.test(email)
+         }, 'El campo email es invalido'],
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'El campo email es invalido']
+    },
+    cuota: {
+        type: Number,
+        enum: [20, 35, 50, 100],
+        required: [true, 'El campo cuota es requerido']
+    },
+    activo:{
+        type: Boolean,
+        default: true
+    }
 });
 
 

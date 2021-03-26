@@ -1,0 +1,42 @@
+###
+GET http://localhost:3000/api/clientes
+
+###
+GET http://localhost:3000/api/clientes/605e12791e0d3b3c90c06c36
+
+###
+POST  http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+    "nombre": "Test8",
+    "apellidos": "Test Test",
+    "email": "test8@gmail.com",
+    "cuota": 20,
+    "activo": true,
+    "dni": "13123156F"
+}
+###
+PUT http://localhost:3000/api/clientes/605e11fa7a514f25200148d5
+Content-Type: application/json
+
+{
+    "nombre": "Test5",
+    "apellidos": "Test Test",
+    "email": "test5@gmail.com",
+    "cuota": 50,
+    "activo": true
+}
+
+###
+DELETE http://localhost:3000/api/clientes/605e12791e0d3b3c90c06c36
+
+###
+POST  http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+
+{
+    "username": "Test6",
+    "email": "test6@gmail.com",
+    "password": "password1"
+}
