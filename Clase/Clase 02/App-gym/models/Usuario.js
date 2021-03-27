@@ -24,6 +24,10 @@ const usuarioSchema = new Schema({
         type: String,
         minlength:[6, 'minimo 4 caracteres'], 
         required: [true, 'El campo password es requerido']
+    },
+    rol: {
+        type: String,
+        default: 'usuario'
     }
 }, {
     versionKey: false

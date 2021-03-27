@@ -7,11 +7,12 @@ GET http://localhost:3000/api/clientes/605e12791e0d3b3c90c06c36
 ###
 POST  http://localhost:3000/api/clientes
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDVmMTFkMTA4NmQ0YzI2ZTQzZDM5NWQiLCJpYXQiOjE2MTY4NDMyMTcsImV4cCI6MTYxNjg0MzgxN30.n2THHVi2ZajOSW1H_-MKBVKb4OWvcJmQ2Mva75O5xJ0
 
 {
-    "nombre": "Test8",
+    "nombre": "Test10",
     "apellidos": "Test Test",
-    "email": "test8@gmail.com",
+    "email": "test10@gmail.com",
     "cuota": 20,
     "activo": true,
     "dni": "13123156F"
@@ -19,6 +20,7 @@ Content-Type: application/json
 ###
 PUT http://localhost:3000/api/clientes/605e11fa7a514f25200148d5
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDVmMDY5OWQzZDc1NTBmZDQ4ODFiYTgiLCJpYXQiOjE2MTY4NDAzNDUsImV4cCI6MTYxNjg0MDk0NX0.Ia7CJ721vNPRoz4wX6bv6Z9H5C2BOhzaSOimrziyxzI
 
 {
     "nombre": "Test5",
@@ -30,13 +32,25 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/clientes/605e12791e0d3b3c90c06c36
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDVmMDY5OWQzZDc1NTBmZDQ4ODFiYTgiLCJpYXQiOjE2MTY4NDAzNDUsImV4cCI6MTYxNjg0MDk0NX0.Ia7CJ721vNPRoz4wX6bv6Z9H5C2BOhzaSOimrziyxzI
 
 ###
 POST  http://localhost:3000/api/usuarios/registro
 Content-Type: application/json
 
 {
-    "username": "Test6",
+    "username": "Test9",
+    "email": "test9@gmail.com",
+    "password": "password1",
+    "rol": "admin"
+}
+
+###
+POST  http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
     "email": "test6@gmail.com",
     "password": "password1"
 }
+

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { check, validationResult } = require('express-validator');
+const { esRolValido } = require('../../../middlewares/validarUsuario');
 const Cliente = require('../../../models/Cliente');
 
 
@@ -59,7 +60,8 @@ router.post('/', [
         }),
     check('dni', 'El dni es incorrecto').custom( value => {
         return (/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i).test(value);
-    })
+    }),
+    esRolValido
 ], async(req, res) => {
     // Validar errores
     const errores = validationResult(req)
@@ -92,7 +94,7 @@ router.post('/', [
 });
 
 // modificar cliente.
-router.put('/:id', async(req, res) => {
+router.put('/:id', esRolValido, async(req, res) => {
     const { id } = req.params;
     const { nombre, apellidos, email, cuota, activo} = req.body;
     try {
@@ -121,7 +123,7 @@ router.put('/:id', async(req, res) => {
 });
 
 // borrar cliente.
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', esRolValido, async(req, res) => {
     const { id } = req.params;
     try {
         const clienteEliminado = await Cliente.findByIdAndDelete( id );
