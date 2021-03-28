@@ -1,11 +1,53 @@
+// RUTA API TEACHERS
 ###
-GET http://localhost:3000/api/clientes
+GET http://localhost:3000/api/teachers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
 
 ###
-GET http://localhost:3000/api/clientes/6060afa649a8f32bb05aafec
+GET http://localhost:3000/api/teachers/6060e872cd2f9d34c8787979
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
+
+###
+POST  http://localhost:3000/api/teachers
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
+
+{
+    "nombre": "Test5",
+    "apellidos": "Test Test",
+    "edad": 30,
+    "especialidad": "zumba"
+}
+
+###
+PUT http://localhost:3000/api/teachers/6060e872cd2f9d34c8787979
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
+
+{
+    "nombre": "Test7",
+    "apellidos": "Test Test",
+    "edad": 25,
+    "especialidad": "body pump"
+}
+
+###
+DELETE http://localhost:3000/api/teachers/6060e872cd2f9d34c8787979
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
+
+
+// RUTAS API CLIENTES
+###
+GET http://localhost:3000/api/clientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
+
+###
+GET http://localhost:3000/api/clientes/6060afe549a8f32bb05aaff1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
 
 ###
 POST  http://localhost:3000/api/clientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
 Content-Type: application/json
 
 {
@@ -16,9 +58,9 @@ Content-Type: application/json
     "activo": true
 }
 ###
-PUT http://localhost:3000/api/clientes/6060c049844d921420cced2
+PUT http://localhost:3000/api/clientes/6060edcf8ef9331d6c8dd6eb
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwYzA5Mzg0NGQ5MjE0MmMwY2NlZDMiLCJpYXQiOjE2MTY5NTM0OTEsImV4cCI6MTYxNjk1NDA5MX0.NHmxhny7zXjxc6L0Q0EdgPEPusCQuLKvXLXN3pl1X1w
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
 
 {
     "nombre": "Test7",
@@ -29,16 +71,19 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwYzA5Mzg0NGQ5
 }
 
 ###
-DELETE http://localhost:3000/api/clientes/6060c049844d92142c0cced2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwYzA5Mzg0NGQ5MjE0MmMwY2NlZDMiLCJpYXQiOjE2MTY5NTM0OTEsImV4cCI6MTYxNjk1NDA5MX0.NHmxhny7zXjxc6L0Q0EdgPEPusCQuLKvXLXN3pl1X1w
+DELETE http://localhost:3000/api/clientes/6060edcf8ef9331d6c8dd6eb
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwY2Q5NDI1MmMwNzMzYzRlMmViZWQiLCJpYXQiOjE2MTY5NjMyMDIsImV4cCI6MTYxNzA0OTYwMn0.amRrwCy2Vfqsft8Wa4x9CBCU0zDI0Y3KZEFt3lSfR0s
 
+
+
+// RUTAS API USUARIOS
 ###
 POST  http://localhost:3000/api/usuarios/registro
 Content-Type: application/json
 
 {
-    "username": "Test10",
-    "email": "test10@gmail.com",
+    "username": "Test12",
+    "email": "test12@gmail.com",
     "password": "password1",
     "rol": "admin"
 }
@@ -48,7 +93,7 @@ POST  http://localhost:3000/api/usuarios/login
 Content-Type: application/json
 
 {
-    "email": "test10@gmail.com",
+    "email": "test12@gmail.com",
     "password": "password1"
 }
 

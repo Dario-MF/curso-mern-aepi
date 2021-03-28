@@ -3,21 +3,21 @@ const jwt = require('jsonwebtoken');
 const Usuario = require('../models/Usuario');
 
 
-const esTokenValido = async (req, res, next)=> {
-    if(!req.headers['authorization']){
+const esTokenValido = async (req, res, next) => {
+    if (!req.headers['authorization']) {
         return res.status(400).json({
             error: 'Acceso denegado, no se encuentra token.'
         });
     };
     let payload;
     try {
-       payload = jwt.verify(req.headers['authorization'], process.env.PRIVATE_KEY_JWT)
+        payload = jwt.verify(req.headers['authorization'], process.env.PRIVATE_KEY_JWT)
     } catch (error) {
         return res.status(403).json({
             error: 'Acceso denegado, token no valido'
         });
     };
-    if(dayjs().unix() > payload.exp){
+    if (dayjs().unix() > payload.exp) {
         return res.status(403).json({
             error: 'Acceso denegado, token caducado'
         });
@@ -29,8 +29,8 @@ const esTokenValido = async (req, res, next)=> {
 
 const esRolValido = async (req, res, next) => {
     const { uid } = req.body;
-    const usuario = await Usuario.findById( uid );
-    if(usuario.rol !== 'admin'){
+    const usuario = await Usuario.findById(uid);
+    if (usuario.rol !== 'admin') {
         return res.status(403).json({
             error: 'Acceso denegado, rol admin requerido'
         });
@@ -39,7 +39,16 @@ const esRolValido = async (req, res, next) => {
     next();
 };
 
+const isEmailUnicoUsuario = async (email = '') => {
+    const EmailUnico = await Usuario.findOne({ email });
+    if (EmailUnico) {
+        throw new Error('El email ya esta en uso');
+    };
+    return;
+};
+
 module.exports = {
     esTokenValido,
-    esRolValido
+    esRolValido,
+    isEmailUnicoUsuario
 };

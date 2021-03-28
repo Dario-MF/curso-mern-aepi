@@ -1,5 +1,6 @@
 const Cliente = require('../models/Cliente');
 
+
 const isEmailUnicoCliente = async (email = '') => {
     const EmailUnico = await Cliente.findOne({ email });
     if (EmailUnico) {
@@ -7,15 +8,8 @@ const isEmailUnicoCliente = async (email = '') => {
     };
     return;
 };
-const isEmailUnicoUsuario = async (email = '') => {
-    const EmailUnico = await Cliente.findOne({ email });
-    if (EmailUnico) {
-        throw new Error('El email ya esta en uso');
-    };
-    return;
-};
 
-const isIdValid = async (id = '') => {
+const isIdValidCliente = async (id = '') => {
     const idValid = await Cliente.findById(id);
     if (!idValid) {
         throw new Error('El id no es valido');
@@ -24,9 +18,8 @@ const isIdValid = async (id = '') => {
 };
 
 
+
 module.exports = {
     isEmailUnicoCliente,
-    isEmailUnicoUsuario,
-    isIdValid
+    isIdValidCliente
 };
-

@@ -1,6 +1,7 @@
 
 module.exports = {
-    customValidators: require('./customValidators'),
+    validarTeacher: require('./validarTeacher'),
+    validarCliente: require('./validarCliente'),
     validarErrores: require('./validarErrores'),
     validarUsuario: require('./validarUsuario')
-}
+};

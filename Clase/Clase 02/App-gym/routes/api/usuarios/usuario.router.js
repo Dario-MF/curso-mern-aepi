@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { check } = require('express-validator');
-const { validarErrores, customValidators } = require('../../../middlewares/index');
+const { validarErrores, validarUsuario } = require('../../../middlewares/index');
 const { registrarUsuario, loginUsuario } = require('../../../controller/usuarios.controller');
 
 
@@ -12,7 +12,7 @@ router.post('/registro', [
         .withMessage('El campo email es requerido')
         .isEmail()
         .withMessage('El campo email es invalido')
-        .custom(customValidators.isEmailUnicoUsuario),
+        .custom(validarUsuario.isEmailUnicoUsuario),
     check('password')
         .notEmpty()
         .withMessage('El campo password es requerido')

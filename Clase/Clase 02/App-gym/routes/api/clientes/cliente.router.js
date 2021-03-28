@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { check } = require('express-validator');
-const { validarErrores, validarUsuario, customValidators } = require('../../../middlewares/index');
+const { validarErrores, validarUsuario, validarCliente } = require('../../../middlewares/index');
 const {
     getAllCLientes,
     getCientWithId,
@@ -17,7 +17,7 @@ router.get('/:id', [
     check('id')
         .isMongoId()
         .withMessage('No es id valido')
-        .custom(customValidators.isIdValid),
+        .custom(validarCliente.isIdValidCliente),
     validarErrores
 ], getCientWithId);
 
@@ -31,7 +31,7 @@ router.post('/', [
         .withMessage('El campo email es requerido')
         .isEmail()
         .withMessage('El campo email es invalido')
-        .custom(customValidators.isEmailUnicoCliente),
+        .custom(validarCliente.isEmailUnicoCliente),
     validarErrores
 ], saveNewCliente);
 
@@ -40,7 +40,7 @@ router.put('/:id', [
     check('id')
         .isMongoId()
         .withMessage('No es id valido')
-        .custom(customValidators.isIdValid),
+        .custom(validarCliente.isIdValidCliente),
     validarUsuario.esTokenValido,
     validarUsuario.esRolValido,
     validarErrores
@@ -51,7 +51,7 @@ router.delete('/:id', [
     check('id')
         .isMongoId()
         .withMessage('No es id valido')
-        .custom(customValidators.isIdValid),
+        .custom(validarCliente.isIdValidCliente),
     validarUsuario.esTokenValido,
     validarUsuario.esRolValido,
     validarErrores
