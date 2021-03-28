@@ -7,7 +7,7 @@ const usuarioApiRouter = require('./usuarios/usuario.router');
 
 
 
-router.use('/clientes', esTokenValido, clienteApiRouter);
+router.use('/clientes', clienteApiRouter);
 router.use('/usuarios', usuarioApiRouter);
 
 

@@ -2,45 +2,43 @@
 GET http://localhost:3000/api/clientes
 
 ###
-GET http://localhost:3000/api/clientes/605e12791e0d3b3c90c06c36
+GET http://localhost:3000/api/clientes/6060afa649a8f32bb05aafec
 
 ###
 POST  http://localhost:3000/api/clientes
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDVmMTFkMTA4NmQ0YzI2ZTQzZDM5NWQiLCJpYXQiOjE2MTY4NDMyMTcsImV4cCI6MTYxNjg0MzgxN30.n2THHVi2ZajOSW1H_-MKBVKb4OWvcJmQ2Mva75O5xJ0
 
 {
-    "nombre": "Test10",
+    "nombre": "Test7",
     "apellidos": "Test Test",
-    "email": "test10@gmail.com",
+    "email": "test7@gmail.com",
     "cuota": 20,
-    "activo": true,
-    "dni": "13123156F"
+    "activo": true
 }
 ###
-PUT http://localhost:3000/api/clientes/605e11fa7a514f25200148d5
+PUT http://localhost:3000/api/clientes/6060c049844d921420cced2
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDVmMDY5OWQzZDc1NTBmZDQ4ODFiYTgiLCJpYXQiOjE2MTY4NDAzNDUsImV4cCI6MTYxNjg0MDk0NX0.Ia7CJ721vNPRoz4wX6bv6Z9H5C2BOhzaSOimrziyxzI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwYzA5Mzg0NGQ5MjE0MmMwY2NlZDMiLCJpYXQiOjE2MTY5NTM0OTEsImV4cCI6MTYxNjk1NDA5MX0.NHmxhny7zXjxc6L0Q0EdgPEPusCQuLKvXLXN3pl1X1w
 
 {
-    "nombre": "Test5",
+    "nombre": "Test7",
     "apellidos": "Test Test",
-    "email": "test5@gmail.com",
+    "email": "test7@gmail.com",
     "cuota": 50,
     "activo": true
 }
 
 ###
-DELETE http://localhost:3000/api/clientes/605e12791e0d3b3c90c06c36
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDVmMDY5OWQzZDc1NTBmZDQ4ODFiYTgiLCJpYXQiOjE2MTY4NDAzNDUsImV4cCI6MTYxNjg0MDk0NX0.Ia7CJ721vNPRoz4wX6bv6Z9H5C2BOhzaSOimrziyxzI
+DELETE http://localhost:3000/api/clientes/6060c049844d92142c0cced2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYwYzA5Mzg0NGQ5MjE0MmMwY2NlZDMiLCJpYXQiOjE2MTY5NTM0OTEsImV4cCI6MTYxNjk1NDA5MX0.NHmxhny7zXjxc6L0Q0EdgPEPusCQuLKvXLXN3pl1X1w
 
 ###
 POST  http://localhost:3000/api/usuarios/registro
 Content-Type: application/json
 
 {
-    "username": "Test9",
-    "email": "test9@gmail.com",
+    "username": "Test10",
+    "email": "test10@gmail.com",
     "password": "password1",
     "rol": "admin"
 }
@@ -50,7 +48,7 @@ POST  http://localhost:3000/api/usuarios/login
 Content-Type: application/json
 
 {
-    "email": "test6@gmail.com",
+    "email": "test10@gmail.com",
     "password": "password1"
 }
 
