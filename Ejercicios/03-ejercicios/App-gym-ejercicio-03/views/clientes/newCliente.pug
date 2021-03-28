@@ -1,0 +1,28 @@
+extends ../layout.pug 
+
+block content 
+    h2 Crear nuevo cliente 
+    hr
+
+    form(action='/clientes/create', method='POST')
+        .form-group.mb-4
+            label.form-label Nombre 
+            input.form-control(type="text", placeholder='Introduce Nombre', name='nombre')
+        .form-group.mb-4 
+            label.form-label Apellidos 
+            input.form-control(type="text", placeholder='Introduce Apellidos', name='apellidos')
+        .form-group.mb-4 
+            label.form-label Email 
+            input.form-control(type="email", placeholder='Introduce Email', name='email')
+        .form-group.mb-4 
+            label.form-label Cuota 
+            select.form-select(name='cuota') 
+                option(selected) Elige tu cuota 
+                option(value= 9.99 ) Semanal (9,99$)
+                option(value= 19.99 ) Mensual (19,99$)
+                option(value= 49.99 ) Semestral (49,99$)
+                option(value= 89.99 ) Anual (89,99$)    
+        .form-group.mb-4 
+            label.form-label.mr-5 Activo
+            input.form-check-input(type="checkbox", name='activo')
+        input.btn.btn-block.btn-info(type="submit", value="Enviar")
