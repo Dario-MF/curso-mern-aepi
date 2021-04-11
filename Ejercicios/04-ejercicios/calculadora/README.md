@@ -1,4 +1,7 @@
 # [MEAN] Ejercicios Semana 4
+
+![calculadora2](https://user-images.githubusercontent.com/44214019/114312460-0c5bb800-9af3-11eb-841d-70eb6548e648.png)
+
 - El ejercicio consiste en la creación de una aplicación de React que represente una calculadora simple.
 - La definición de la interfaz gráfica puede basarse en el siguiente esquema (los colores son orientativos ;)).
 
