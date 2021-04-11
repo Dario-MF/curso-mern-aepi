@@ -1,0 +1,82 @@
+body{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+@font-face {
+    font-family: "digital";
+    src: url('../assets/digital-7.ttf');
+}
+@font-face {
+    font-family: "casio";
+    src: url('../assets/Microgramma\ D\ Extended\ Bold.otf');
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image:url('../assets/fondo.jpg');
+    background-position: right;
+    background-size: cover; 
+}  
+    
+.comp-calculadora {
+    border-radius: 10px;
+    background-color: rgb(119, 121, 122);
+    color: rgb(223, 223, 223);
+    padding: 1rem 1.5rem;
+    margin-left: 20%;
+}
+.comp-calculadora h2 {
+    margin: 0 0 2em;
+    font-size: 1em;
+    font-family: 'casio';
+    letter-spacing: 1px;
+}
+.atom-pantalla{
+    width: 100%;
+    margin: 0 0 3em;
+    padding: .5em 0;
+    text-align: end; 
+    background-color: rgb(182, 220, 229);
+    color: rgb(95, 122, 145);
+    font-family: 'digital';
+    border-radius: 10px;
+    border-top: 3px solid rgb(6, 17, 37);
+    border-right:  3px solid rgb(10, 20, 39);
+    border-left: 1px solid #333;
+}
+.text-pantalla{
+    font-size: 2em;
+    margin: 0 .4em;
+}
+.molucule-teclado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.atom-boton{
+    color: white;
+    padding: 1rem 0;
+    width: 23%;
+    margin-bottom: .5em;
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
+    border-bottom: 3px solid rgb(97, 96, 96);
+    border-right:  3px solid rgb(90, 89, 89);
+    background-color: rgb(191, 191, 194);
+}
+.atom-boton:focus{
+    outline: none;
+}
+.atom-boton:nth-child(13) {
+    background-color: rgb(189, 118, 76);
+}
+.atom-boton:nth-child(17) {
+    width: 100%;
+}
