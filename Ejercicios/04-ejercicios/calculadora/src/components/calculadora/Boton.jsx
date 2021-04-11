@@ -6,7 +6,7 @@ const Boton = ({simbolo, clickSimbolo}) => {
         clickSimbolo(simbolo);
     };
     return (
-        <button className='atom-boton' onClick={handleClick}>{simbolo}</button>
+        <button className='atom-boton' onClick={handleClick}>{(simbolo === '*')? 'X':simbolo}</button>
     );
 };
 
