@@ -62,7 +62,7 @@ body{
     padding: 1rem 0;
     width: 23%;
     margin-bottom: .5em;
-    border-radius: 10px;
+    border-radius: 50px;
     font-size: 1.3em;
     font-weight: bold;
     cursor: pointer;
@@ -75,8 +75,11 @@ body{
     outline: none;
 }
 .atom-boton:nth-child(13) {
-    background-color: rgb(189, 118, 76);
+    background-color: rgb(207, 129, 84);
 }
 .atom-boton:nth-child(17) {
     width: 100%;
+}
+.atom-boton:nth-child(4n) {
+    background-color: rgb(226, 189, 134);
 }
