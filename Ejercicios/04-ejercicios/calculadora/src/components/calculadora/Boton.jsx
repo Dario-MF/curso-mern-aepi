@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Boton = ({simbolo, clickSimbolo}) => {
-
     const handleClick = () => {
         clickSimbolo(simbolo);
     };

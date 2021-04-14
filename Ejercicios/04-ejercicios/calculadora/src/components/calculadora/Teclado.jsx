@@ -1,8 +1,8 @@
 import React from 'react';
 import Boton from './Boton';
 
-const Teclado = ({clickSimbolo}) => {
-
+const Teclado = React.memo(({clickSimbolo}) => {
+    console.log('Botones creados');
     const arrNumeros = ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', 'C', '0', '.', '+', '='];
     return (
         <div className='molucule-teclado'>
@@ -15,6 +15,6 @@ const Teclado = ({clickSimbolo}) => {
             ))}
         </div>
     );
-};
+})
 
 export default Teclado;
