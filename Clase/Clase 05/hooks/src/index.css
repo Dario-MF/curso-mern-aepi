@@ -1,0 +1,21 @@
+.users {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 1em; 
+    
+}
+
+.user {
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 3%;
+    width: 300px;
+    margin-bottom: 2em;
+    text-align: center;
+    background-color: whitesmoke;
+}
+.user img {
+    border-radius: 50%;
+}

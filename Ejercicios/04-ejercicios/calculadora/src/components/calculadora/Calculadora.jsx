@@ -12,7 +12,7 @@ const Calculadora = () => {
         if ( simbolo === '='){
             setOperacion(o => { 
                 try {
-                    const total = String(eval(o.strOperacion))
+                    const total = String(eval(o.strOperacion));
                     return { strOperacion: total }
                 } catch (error) {
                     return { strOperacion: '0' }

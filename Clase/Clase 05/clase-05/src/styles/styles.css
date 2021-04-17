@@ -1,0 +1,17 @@
+body{
+    padding: 50px;
+}
+
+.contactos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
+.contacto{
+    margin: 1em 0 1em;
+    width: 35vw;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    text-align: center;
+}
