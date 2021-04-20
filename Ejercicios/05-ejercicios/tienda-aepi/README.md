@@ -1,6 +1,6 @@
 # Ejercicios Semana 5 MERN
 
-![Tienda](https://user-images.githubusercontent.com/44214019/115354302-c4572800-a1b9-11eb-9209-6a7a8023d5f3.png)
+![Tienda](https://user-images.githubusercontent.com/44214019/115392472-e6b06c00-a1e0-11eb-9146-f4284c16910b.png)
 
 # Tienda
     
