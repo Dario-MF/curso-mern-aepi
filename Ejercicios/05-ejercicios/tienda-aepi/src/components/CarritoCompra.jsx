@@ -2,7 +2,7 @@ import React from 'react';
 import ListadoCarrito from './ListadoCarrito';
 
 
-const CarritoCompra = ({listadoCarrito}) => {
+const CarritoCompra = ({listadoCarrito, addToCart, removeToCart}) => {
 
     const calculoCarrito = () => {
         let total = 0;
@@ -18,7 +18,7 @@ const CarritoCompra = ({listadoCarrito}) => {
                 <h3>Carrito</h3>
             </div>
             <div className="list-products">
-                <ListadoCarrito productos={listadoCarrito} />
+                <ListadoCarrito productos={listadoCarrito} addToCart={addToCart}  removeToCart={removeToCart}/>
             </div>
             <div className="total-carrito">
                 <p>TOTAL</p>

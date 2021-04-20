@@ -22,6 +22,19 @@ const Tienda = () => {
         };
     };
 
+    const removeToCart = (productId) => {
+        const productIndex = listadoCarrito.findIndex(producto => producto.id === productId);
+
+        if( listadoCarrito[productIndex].count > 1 ){
+            let newListadoCarrito = listadoCarrito;
+            newListadoCarrito[productIndex].count =  newListadoCarrito[productIndex].count - 1;
+            setListadoCarrito([...newListadoCarrito]);
+            
+        }else{
+            const newListadoCarrito = listadoCarrito.filter(product => product.id !== productId);
+            setListadoCarrito([...newListadoCarrito]);
+        };
+    };
 
     return (
         <div className='container'>
@@ -29,11 +42,10 @@ const Tienda = () => {
             <hr/> 
             <div className="row listados">
                 <Productos productos={productos} addToCart={addToCart}/>
-                <CarritoCompra listadoCarrito={listadoCarrito}/>
-            </div>
-            
+                <CarritoCompra listadoCarrito={listadoCarrito} addToCart={addToCart} removeToCart={removeToCart}/>
+            </div>   
         </div>
-    )
-}
+    );
+};
 
-export default Tienda
+export default Tienda;

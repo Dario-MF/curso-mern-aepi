@@ -2,9 +2,9 @@
 
 # Tienda
 
-    - El ejercicio para esta semana consiste en desarrollar una "Tienda" a partie de los datos que adjunto en el
+    + El ejercicio para esta semana consiste en desarrollar una "Tienda" a partie de los datos que adjunto en el
     fichero json del email.
-    - La visualización del proyecto debe seguir la siguiente estructura
+    + La visualización del proyecto debe seguir la siguiente estructura
         - En la parte izquierda mostrarmos todos los productos ordenados con su imagen, su nombre y su
         precio.
         - (Opcional) Podemos intentar mostrarlos por categorías
@@ -19,4 +19,3 @@
     utilizarlos:
 
 
-1 import { productos } from './data/productos';

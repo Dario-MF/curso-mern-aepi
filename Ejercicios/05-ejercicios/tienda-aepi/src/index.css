@@ -2,7 +2,6 @@ body{
     padding-top: 1em;
 }
 
-
 .header-list{
     display: flex;
     justify-content: space-between;
@@ -34,20 +33,58 @@ body{
     content: '€';
 }
 
-.product-cart {
+.td-articulo{
     display: flex;
-    justify-content: flex-start;
     align-items: flex-end;
-    padding: 1em;
-    width: 100%;
-    margin-bottom: .3em;
-    border-bottom: 1px solid rgba(0, 0, 0, .3);
-
 }
 
-.product-cart img {
-    max-width: 50px;
+.cart-img {
+    max-width: 60px;
     margin-right: 1em;
+}
+table{
+    width: 100%;
+}
+thead{
+    border-bottom: 2px solid rgb(204, 203, 203);
+}
+tr{
+    border-bottom: 1px solid rgb(204, 203, 203);
+}
+td{
+    padding-top: 1.5em;
+    
+}
+
+.articulo-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.count-box {
+    display: flex;
+}
+
+.count-box button {
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 3px;
+    width: 1.8em;
+    height: 1.8em;
+    font-size: 1em;
+}
+
+.count-box p {
+    display: block;
+    text-align: center;
+    width: 1.8em;
+    height: 1.8em;
+    font-size: 1em;
+    border-top: 1px solid rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.producto-precio{
+    text-align: end;
 }
 
 .total-carrito {
