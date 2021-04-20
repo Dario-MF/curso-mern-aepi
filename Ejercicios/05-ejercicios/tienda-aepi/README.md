@@ -3,13 +3,7 @@
 ![Tienda](https://user-images.githubusercontent.com/44214019/115354302-c4572800-a1b9-11eb-9209-6a7a8023d5f3.png)
 
 # Tienda
-
-<<<<<<< HEAD
-    + El ejercicio para esta semana consiste en desarrollar una "Tienda" a partie de los datos que adjunto en el
-    fichero json del email.
-    + La visualización del proyecto debe seguir la siguiente estructura
-        - En la parte izquierda mostrarmos todos los productos ordenados con su imagen, su nombre y su
-=======
+    
 - El ejercicio para esta semana consiste en desarrollar una "Tienda" a partie de los datos que adjunto en el
 fichero json del email.
 - La visualización del proyecto debe seguir la siguiente estructura
